@@ -54,7 +54,7 @@ export default {
       const response= await axios.get('https://api.ipify.org?format=json').
       then(response=>(this.ip_address = response.data.ip));
       console.log(this.ip_address);
-      const res = await axios.post('http://127.0.0.1:8000/api/getIp',{
+      const res = await axios.post('https://portfolio-ossama.herokuapp.com/api/getIp',{
      ip: this.ip_address ,
    });
       return res + response;
