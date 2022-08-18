@@ -2,7 +2,7 @@
   <section class="experiance pb-6">
     <v-img
       class="pa-10"
-      src="@/assets/experiance.jpg"
+      src="../assets/experiance.jpg"
       lazy
     >
       <v-container>
