@@ -20,7 +20,7 @@
               large
               elevation="9"
               color="pink"
-              class="white--text mt-10 ml-4 px-10 py-5 rounded-xl my_button"
+              class="white--text mt-10 ml-4 ml-sm-0 px-10 py-5 rounded-xl my_button"
               @click="$vuetify.goTo('#Contact', options)"
               >Contact
             </v-btn>
