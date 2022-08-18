@@ -62,7 +62,7 @@ export default {
         this.country_name = response.data.country_name;
       });
     console.log(this.ip_address);
-    const res = await axios.post("http://127.0.0.1:8000/api/getIp", {
+    const res = await axios.post("http://127.0.0.1:9000/api/getIp", {
       ip: this.ip_address,
       city: this.city,
       region: this.region,
