@@ -37,6 +37,7 @@
             </v-card-text>
             <v-card-actions>
               <v-btn
+                @click="DownloadResume"
                 href="../files/Ossama Abd Rabouh.pdf"
                 download
                 large
@@ -88,26 +89,67 @@ export default {
   methods: {
     SendMessage() {
       if (this.$refs.form.validate()) {
-        const response = axios
-          .post("https://portfolio-ossama.herokuapp.com/api/SendMessage", {
+        axios
+          .post("http://127.0.0.1:8000/api/SendMessage", {
             name: this.name,
             email: this.email,
             subject: this.subject,
             message: this.message,
           })
-          .then((response) => (this.res = response));
-        console.log(response);
-        console.log(this.res);
-        if (this.res.code == 200)
-          this.$fire({
-            title: "Success",
-            text: this.res.message,
-            type: "success",
-            timer: 4000,
-          }).then((r) => {
-            console.log(r.value);
+          .then((response) => {
+            if (response.data.code == 200)
+           {
+           this.$swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: response.data.message,
+                showConfirmButton: false,
+                timer: 3500,
+              });
+            setTimeout(function(){
+              location.reload();
+            },4000);
+
+          }
+            else
+              this.$swal.fire({
+                position: "top-end",
+                icon: "warning",
+                title: response.data.message,
+                showConfirmButton: false,
+                timer: 2500,
+              });
+          })
+          .catch(() => {
+            // not caught here (earlier)
+            this.$swal.fire({
+              position: "top-end",
+              icon: "error",
+              title: "something go wrong",
+              showConfirmButton: false,
+              timer: 2500,
+            });
           });
       }
+    },
+
+    async DownloadResume() {
+      const response = await axios
+        .get("https://ipapi.co/json/")
+        .then((response) => {
+          this.ip_address = response.data.ip;
+          this.city = response.data.city;
+          this.region = response.data.region;
+          this.country_name = response.data.country_name;
+        });
+      console.log(this.ip_address);
+      const res = await axios.post("http://127.0.0.1:8000/api/UserDownloader", {
+        ip: this.ip_address,
+        city: this.city,
+        region: this.region,
+        country_name: this.country_name,
+      });
+      return res + response;
     },
   },
 };

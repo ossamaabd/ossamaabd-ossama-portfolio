@@ -8,9 +8,10 @@
 
       <experiance id="Experiance"></experiance>
       <section class="portfolio" id="Portfolio">
-        <h4 class="display-2 text-center">If you don't play, you'll never win.</h4>
-        <div class="pa-4 text-center portfolio" >- Mark Menson</div>
-    
+        <h4 class="display-2 text-center">
+          If you don't play, you'll never win.
+        </h4>
+        <div class="pa-4 text-center portfolio">- Mark Menson</div>
       </section>
       <contact></contact>
     </v-main>
@@ -45,29 +46,36 @@ export default {
       { title: "Vuetify", value: 90, color: "black" },
       { title: "PHP", value: 100, color: "red" },
     ],
-    ip_address:"",
-
+    ip_address: "",
+    city: "",
+    region: "",
+    country_name: "",
   }),
 
-    async mounted()
-    {
-      const response= await axios.get('https://api.ipify.org?format=json').
-      then(response=>(this.ip_address = response.data.ip));
-      console.log(this.ip_address);
-      const res = await axios.post('https://portfolio-ossama.herokuapp.com/api/getIp',{
-     ip: this.ip_address ,
-   });
-      return res + response;
+  async mounted() {
+    const response = await axios
+      .get("https://ipapi.co/json/")
+      .then((response) => {
+        this.ip_address = response.data.ip;
+        this.city = response.data.city;
+        this.region = response.data.region;
+        this.country_name = response.data.country_name;
+      });
+    console.log(this.ip_address);
+    const res = await axios.post("http://127.0.0.1:8000/api/getIp", {
+      ip: this.ip_address,
+      city: this.city,
+      region: this.region,
+      country_name: this.country_name,
+    });
+    return res + response;
+  },
 
-    },
-
-    
   //   async created()
   //   {
-           
+
   //  console.log(res.data);
-  //  return res.data; 
+  //  return res.data;
   //   }
 };
 </script>
-
