@@ -27,6 +27,7 @@ import Home from "@/components/Home.vue";
 import Experiance from "@/components/Experiance.vue";
 import Contact from "@/components/Contact.vue";
 
+
 export default {
   name: "App",
   components: {
@@ -53,6 +54,7 @@ export default {
   }),
 
   async mounted() {
+    console.log(process.env.VUE_APP_ROOT_API)
     const response = await axios
       .get("https://ipapi.co/json/")
       .then((response) => {
@@ -62,7 +64,7 @@ export default {
         this.country_name = response.data.country_name;
       });
     console.log(this.ip_address);
-    const res = await axios.post("http://127.83.52.3:9000/api/getIp", {
+    const res = await axios.post("https://ossama-portfoliooo.000webhostapp.com/api/getIp", {
       ip: this.ip_address,
       city: this.city,
       region: this.region,
