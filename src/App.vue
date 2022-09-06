@@ -1,41 +1,22 @@
 <template>
   <v-app id="inspire">
-    <navbar></navbar>
+    
 
     <v-main>
-      <home></home>
-      <overview></overview>
 
-      <experiance id="Experiance"></experiance>
-      <section class="portfolio" id="Portfolio">
-        <h4 class="display-2 text-center">
-          If you don't play, you'll never win.
-        </h4>
-        <div class="pa-4 text-center portfolio">- Mark Menson</div>
-      </section>
-      <contact></contact>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import axios from "axios";
-import "../src/css/app.css";
-import NavBar from "./components/NavBar.vue";
-import OverView from "./components/OverView.vue";
-import Home from "@/components/Home.vue";
-import Experiance from "@/components/Experiance.vue";
-import Contact from "@/components/Contact.vue";
+
 
 
 export default {
   name: "App",
   components: {
-    navbar: NavBar,
-    overview: OverView,
-    home: Home,
-    experiance: Experiance,
-    contact: Contact,
+
   },
   data: () => ({
     drawer: null,
@@ -51,28 +32,10 @@ export default {
     city: "",
     region: "",
     country_name: "",
+    results: [],
   }),
 
-  async mounted() {
-    console.log(process.env.VUE_APP_ROOT_API)
-    const response = await axios
-      .get("https://ipapi.co/json/")
-      .then((response) => {
-        this.ip_address = response.data.ip;
-        this.city = response.data.city;
-        this.region = response.data.region;
-        this.country_name = response.data.country_name;
-      });
-    console.log(this.ip_address);
-    const res = await axios.post("https://ossama-portfoliooo.000webhostapp.com/api/getIp", {
-      ip: this.ip_address,
-      city: this.city,
-      region: this.region,
-      country_name: this.country_name,
-    });
-    return res + response;
-  },
-
+  
   //   async created()
   //   {
 
