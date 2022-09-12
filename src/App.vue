@@ -3,7 +3,7 @@
     
 
     <v-main>
-
+      
       <router-view />
     </v-main>
   </v-app>
@@ -12,11 +12,11 @@
 <script>
 
 
-
 export default {
   name: "App",
+  
   components: {
-
+    
   },
   data: () => ({
     drawer: null,
@@ -32,7 +32,14 @@ export default {
     city: "",
     region: "",
     country_name: "",
-    results: [],
+    results: [
+    { title: "HTML", value: 100, color: "light-blue" },
+      { title: "CSS", value: 100, color: "deep-orange" },
+      { title: "Javascript", value: 70, color: "light-green" },
+      { title: "Vuejs", value: 80, color: "blue" },
+      { title: "Vuetify", value: 90, color: "black" },
+      { title: "PHP", value: 100, color: "red" },
+    ],
   }),
 
   

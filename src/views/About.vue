@@ -2,6 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     <h2>{{haha}}</h2>
+
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default {
   components: {
 
   },
-  props: ['results'],
+  props: ['items'],
   data: () => ({
     drawer: null,
    haha: this.$props['results'],

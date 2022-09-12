@@ -7,6 +7,7 @@
     >
       <v-container>
         <h4 class="display-2 text-center">Experience</h4>
+        
         <v-timeline>
           <v-timeline-item
             v-for="(exper, index) in experience"
@@ -36,6 +37,7 @@
 
     export default {
         name: 'Experiance',
+        props:['items'],
         components:{
 
         },

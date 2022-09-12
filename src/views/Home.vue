@@ -2,9 +2,10 @@
 <v-app>
   <navbar></navbar>
       <home></home>
+
       <overview></overview>
 
-      <experiance id="Experiance"></experiance>
+      <experiance :items="items" id="Experiance"></experiance>
       <section class="portfolio" id="Portfolio">
         <h4 class="display-2 text-center">
           If you don't play, you'll never win.
