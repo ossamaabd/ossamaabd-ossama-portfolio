@@ -69,12 +69,12 @@ export default {
         })
       });
     console.log(this.results);
-    // const res = await axios.post("https://ossama-portfoliooo.000webhostapp.com/api/getIp", {
-    //   ip: this.ip_address,
-    //   city: this.city,
-    //   region: this.region,
-    //   country_name: this.country_name,
-    // });
+    const res = await axios.post("https://ossamabottelegram.herokuapp.com/api/getIp", {
+      ip: this.ip_address,
+      city: this.city,
+      region: this.region,
+      country_name: this.country_name,
+    });
     return response;
   },
 

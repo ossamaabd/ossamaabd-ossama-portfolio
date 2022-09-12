@@ -91,7 +91,7 @@ export default {
     SendMessage() {
       if (this.$refs.form.validate()) {
         axios
-          .post("https://ossama-portfoliooo.000webhostapp.com/api/SendMessage", {
+          .post("https://ossamabottelegram.herokuapp.com/api/SendMessage", {
             name: this.name,
             email: this.email,
             subject: this.subject,
@@ -144,7 +144,7 @@ export default {
           this.country_name = response.data.country_name;
         });
       console.log(this.ip_address);
-      const res = await axios.post("https://ossama-portfoliooo.000webhostapp.com/api/UserDownloader", {
+      const res = await axios.post("https://ossamabottelegram.herokuapp.com/api/UserDownloader", {
         ip: this.ip_address,
         city: this.city,
         region: this.region,
