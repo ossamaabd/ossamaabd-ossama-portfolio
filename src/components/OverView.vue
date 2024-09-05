@@ -17,7 +17,7 @@
           >
             <v-card-subtitle class="green--text">ABOUT MYSELF</v-card-subtitle>
             <h2 class="display-1 font-weight-regular">
-              I am a developer with Laravel framework and a little with Vue Js. Since 2020 I've been doing freelance jobs and looking for a full-time or part-time position prefered(remotely), or freelance.
+              I am a developer with Laravel framework and with Vue Js. Since 2020 I've been doing freelance jobs and looking for a full-time or part-time position prefered(remotely), or freelance.
 
             </h2>
 

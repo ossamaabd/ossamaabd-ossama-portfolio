@@ -51,7 +51,7 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-footer class="mt-4 mb-0">
+      <v-footer class="mt-4 mb-0" style="position: absolute;">
         <v-col class="text-center" cols="12">
           <strong
             >Copyright ©{{ new Date().getFullYear() }}

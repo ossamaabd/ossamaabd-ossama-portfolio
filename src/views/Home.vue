@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 import "../css/app.css";
 import NavBar from "../components/NavBar.vue";
@@ -53,30 +53,30 @@ export default {
     region: "",
     country_name: "",
     results: [{
-      "asd":"asd"
+      
     }],
   }),
 
-  async mounted() {
-    const response = await axios
-      .get("https://ipapi.co/json/")
-      .then((response) => {
-        this.results.push({
-          "ip" : response.data.ip,
-          "city" :response.data.city,
-          "region" :response.data.region,
-          "country_name" :response.data.country_name
-        })
-      });
-    console.log(this.results);
-    const res = await axios.post("https://ossamabottelegram.herokuapp.com/api/getIp", {
-      ip: this.ip_address,
-      city: this.city,
-      region: this.region,
-      country_name: this.country_name,
-    });
-    return res;
-  },
+  // async mounted() {
+  //   const response = await axios
+  //     .get("https://ipapi.co/json/")
+  //     .then((response) => {
+  //       this.results.push({
+  //         "ip" : response.data.ip,
+  //         "city" :response.data.city,
+  //         "region" :response.data.region,
+  //         "country_name" :response.data.country_name
+  //       })
+  //     });
+  //   console.log(this.results);
+  //   const res = await axios.post("https://ossamabottelegram.herokuapp.com/api/getIp", {
+  //     ip: this.ip_address,
+  //     city: this.city,
+  //     region: this.region,
+  //     country_name: this.country_name,
+  //   });
+  //   return res;
+  // },
 
   //   async created()
   //   {

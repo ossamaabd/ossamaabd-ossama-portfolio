@@ -46,11 +46,24 @@
 
             experience: [
               {
-                  title: 'Web Developer at Haram Internal Transfers',
+                  title: 'Full Stack Developer at Haram Internal Transfers',
                   date: 'November 2021 - Present',
-                  institute: 'Web Developer',
+                  institute: 'fulltime (onsite)',
                   decription: 'some project and integration Apis with other companies supported with Laravel and Vue js framewrok with MVC design pattern, clean code, relationships ,ORM, Cron Jops, authentication and middleware ...etc'
               },
+                {
+                    title: 'Backend Developer at AI Gate',
+                    date: 'June 2023 - November 2023',
+                    institute: 'part time (remote)',
+                    decription: "I worked on project management system. "
+                },
+                {
+                    title: 'Backend Developer at Izone',
+                    date: 'January 2020 - June 2023',
+                    institute: 'part time (remote)',
+                    decription: "I worked on program was developed to serve the company itself, including all its departments."
+                },
+              
                 {
                     title: 'Backend Developer',
                     date: 'December 2020 - April 2021',
@@ -58,7 +71,7 @@
                     decription: "I worked with flutter team as backend with laravel to present drug store application related with pharmacies"
                 },
                  {
-                    title: 'Backend Developer',
+                    title: 'Full Stack Developer',
                     date: 'March 2021 - August 2021',
                     institute: 'Freelancer',
                     decription: "I worked with front web developer team as backend with laravel to present reservation system hotel"

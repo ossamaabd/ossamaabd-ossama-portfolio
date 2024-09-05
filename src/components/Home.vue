@@ -104,7 +104,7 @@
             <v-img
               class="mx-4 my_image"
               style="border-radius:50% ;"
-              src="../assets/my image.jpg"
+              src="../assets/my_image.jpg"
             ></v-img>
           </v-col>
         </v-row>
